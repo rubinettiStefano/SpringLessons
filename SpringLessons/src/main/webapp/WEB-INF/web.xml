@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+	<display-name>SpringLessons</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<!--  
+		1 - io voglio creare la dispatcher servlet
+		usando il file dispatcher-servlet.xml che ho scritto prima
+		new DispatcherServlet();
+	 -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- 
+		Il mio FRONT CONTROLLER dove sarÃ  mappato? ALLA RADICE!
+		Come prima, /*, ma in Spring si scrive solo /
+	 -->
+	<servlet-mapping> 
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>  
+  
+</web-app>
+<!-- 
+	Io sono un file .xml
+	Vengo usato per DUE ragioni:
+	- per trasferire informazioni (come csv, come txt, come json)
+	- per CONFIGURARE progetti Java
+	
+	CHE DIAVOLO CONFIGURO IO??
+	web.xml CONFIGURA il Dynamic Web Project!!
+	Io sono il dio del DWP. Io detto le regole.
+	
+	
+	Io, web.xml voglio delegare la gestione dell'applicazione a SPRING
+	Alla DISPATCHER SERVLET, al FRONT CONTROLLER, di Spring!!
+	
+ -->
